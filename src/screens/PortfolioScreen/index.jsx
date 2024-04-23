@@ -1,12 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React, { Suspense } from "react";
+import { View, Text } from "react-native";
+import PortfolioAssetsList from "./components/PortfolioAssetsList";
 
-const index = () => {
+const PortfolioScreen = () => {
   return (
-    <View>
-      <Text>index</Text>
+    <View style={{ flex: 1 }}>
+      <Suspense
+        fallback={<Text style={{ color: "white" }}>Loading Please Wait!</Text>}
+      >
+        <PortfolioAssetsList />
+      </Suspense>
     </View>
-  )
-}
+  );
+};
 
-export default index
+export default PortfolioScreen;
